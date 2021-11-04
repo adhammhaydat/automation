@@ -27,8 +27,9 @@ with open ("potential-contacts_copy.txt","r") as f:
 
 
 x = re.findall('[a-zA-Z0-9_$%]+@+[a-z0-9]+.[a-z]+[" "]',file)
+emails = sorted(x)
 contant_email=''
-for i in x:
+for i in emails:
     contant_email +=f'{i}\n'
 
 with open("email.txt","w") as f:
@@ -38,6 +39,7 @@ with open("email.txt","w") as f:
 ############################/ Phone number \###############################
 
 number = re.findall("(\d{3}\D{0,3}\d{3}\D{0,3}\d{4})", file)
+# print(number.)
 contant_phone=''
 for i in number:
     contant_phone +=f'{i} '
@@ -50,10 +52,10 @@ for i in y:
         list.append(f"{i[:3]}-{i[:3]}-{i[:4]}")
     else:    
         list.append(i)    
-
-print(list)
+x = sorted(list)
+print(x)
 list_number=''
-for i in list:
+for i in x:
     list_number +=f"{i}\n"
 
 
